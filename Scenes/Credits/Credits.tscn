@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b0ndhnf7cvoad"]
+
+[ext_resource type="Theme" uid="uid://b3edlo7i72cqp" path="res://Materials/UI.tres" id="1_mdxjw"]
+[ext_resource type="Script" uid="uid://dpg686c0jd7bu" path="res://Scenes/Credits/credits.gd" id="2_mrcp2"]
+
+[node name="Credits" type="Control" unique_id=1755709173]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mdxjw")
+script = ExtResource("2_mrcp2")
+
+[node name="Control" type="Control" parent="." unique_id=1685356739]
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 300.0
+offset_right = 340.0
+offset_bottom = 340.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1175892520]
+layout_mode = 0
+offset_right = 234.0
+offset_bottom = 350.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=728025024]
+layout_mode = 2
+text = "Credits"
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer" unique_id=1649569995]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Control/VBoxContainer" unique_id=1707200026]
+layout_mode = 2
+text = "USER - ROLE"
+
+[node name="Label4" type="Label" parent="Control/VBoxContainer" unique_id=1241851451]
+layout_mode = 2
+text = "USER - ROLE"
+
+[node name="Label5" type="Label" parent="Control/VBoxContainer" unique_id=2078545906]
+layout_mode = 2
+text = "USER - ROLE"
+
+[node name="Label6" type="Label" parent="Control/VBoxContainer" unique_id=1827932231]
+layout_mode = 2
+text = "USER - ROLE"
+
+[node name="return" type="Button" parent="." unique_id=1678999655]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 985.0
+offset_right = 413.0
+offset_bottom = 1034.0
+text = "return to menu"
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]

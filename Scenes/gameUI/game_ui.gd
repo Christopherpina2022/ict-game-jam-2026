@@ -14,7 +14,7 @@ func _ready() -> void:
 	# Start every new scene with all UI not visible
 	hideControl()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and !pause.visible == true:
 		hideControl()
 		pause.visible = true
