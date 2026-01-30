@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmjwyhfidksl2"]
 
 [ext_resource type="Script" uid="uid://de7r7lyab88rw" path="res://Scenes/gameUI/speakerContainer.gd" id="1_rcnvp"]
+[ext_resource type="Script" uid="uid://bjobvp2188oql" path="res://Scenes/gameUI/roomContainer.gd" id="2_nr13x"]
 
 [node name="GameUi" type="Control" unique_id=1653777319]
 layout_mode = 3
@@ -33,3 +34,32 @@ layout_mode = 2
 text = "Lorem ipsum dol"
 fit_content = true
 scroll_active = false
+
+[node name="roomContainer" type="Container" parent="." unique_id=1608365408]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 1148.0
+offset_bottom = 68.0
+script = ExtResource("2_nr13x")
+
+[node name="room" type="HBoxContainer" parent="roomContainer" unique_id=1882749214]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="roomContainer/room" unique_id=950032729]
+layout_mode = 2
+text = "room"
+
+[node name="time" type="HBoxContainer" parent="roomContainer" unique_id=534676966]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="roomContainer/time" unique_id=23458946]
+layout_mode = 2
+text = "time"
+
+[node name="date" type="HBoxContainer" parent="roomContainer" unique_id=9342368]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="roomContainer/date" unique_id=146692373]
+layout_mode = 2
+text = "date"
