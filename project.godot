@@ -14,6 +14,10 @@ config/name="ICT Game Jam 2026"
 run/main_scene="uid://dhxg0nr4weifk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+JSONParser="*uid://wwqm0s1n208p"
+
 [display]
 
 window/size/viewport_width=1920
