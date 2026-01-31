@@ -1,12 +1,52 @@
 extends Node
 
-var activeMusicStream: AudioStreamPlayer
+var currentPlayer: AudioStreamPlayer
+var nextPlayer: AudioStreamPlayer
 
-@export_group("Test")
-@export var clips: Node
+@export var fadeTime = 1.5
 
-func play(audio: String, from: float = 0.0, restart: bool = false) -> void:
-	if restart and activeMusicStream and activeMusicStream.name == audio:
+@onready var musicA: AudioStreamPlayer = $MusicA
+@onready var musicB: AudioStreamPlayer = $MusicB
+
+var musicLibrary = {
+	"menu": preload("res://Assets/temp/check it out i'm in the house like carpet [aByWFApNKEw].mp3"),
+	"room": preload("res://Assets/temp/Drakengard 3： mikhail's song english version [BWLTHAm_vhM].mp3")
+}
+
+func _ready() -> void:
+	currentPlayer = musicA
+	nextPlayer = musicB
+	currentPlayer.volume_db = 0
+	nextPlayer.volume_db = -80
+	musicA.finished.connect(_on_music_finished)
+	musicB.finished.connect(_on_music_finished)
+
+func playMusic(trackName: String):
+	if not musicLibrary.has(trackName):
+		push_warning("Music track not found: " + trackName)
 		return
-	activeMusicStream = clips.get_node(audio)
-	activeMusicStream.play(from)
+	if currentPlayer.stream == musicLibrary[trackName]:
+		return
+	
+	nextPlayer.stream = musicLibrary[trackName]
+	nextPlayer.volume_db = -80
+	nextPlayer.play()
+	
+	var tween = create_tween()
+	
+	tween.tween_property(currentPlayer, "volume_db", -80, fadeTime)
+	
+	tween.tween_property(nextPlayer, "volume_db", 0, fadeTime)
+	
+	tween.finished.connect(func():
+		currentPlayer.stop()
+		_swap_players()
+		)
+
+func _on_music_finished():
+	currentPlayer.play()
+
+func _swap_players():
+	var temp = currentPlayer
+	currentPlayer = nextPlayer
+	nextPlayer = temp

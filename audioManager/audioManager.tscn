@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dl1vsmt5y5pb4" path="res://audioManager/music_player.gd" id="1_d8ryw"]
 
-[node name="AudioManager" type="Node" unique_id=1532013533 node_paths=PackedStringArray("clips")]
+[node name="AudioManager" type="Node" unique_id=1532013533]
 script = ExtResource("1_d8ryw")
-clips = NodePath("Clips")
 
-[node name="Clips" type="Node" parent="." unique_id=1073644229]
+[node name="MusicA" type="AudioStreamPlayer" parent="." unique_id=798933116]
 
-[node name="Test" type="AudioStreamPlayer" parent="Clips" unique_id=798933116]
+[node name="MusicB" type="AudioStreamPlayer" parent="." unique_id=497013371]
