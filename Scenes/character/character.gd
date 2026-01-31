@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var texture: Texture2D
+
 @onready var characterSprite = $Sprite2D
 @onready var collisionShape = $CollisionShape2D
 # TODO: refer to gameState to assign sprite to character
@@ -7,8 +9,8 @@ extends Node2D
 # TODO: add click functionality by assigning a collisionShape2D
 
 func assignSprite() -> void:
-	# Temporarily hard coding a sprite path in here
-	characterSprite.texture = preload("res://Assets/temp/doctor.png")
+	# Assign Texture
+	characterSprite.texture = texture
 	# Assign a collision Shape to allow us to interact with character
 	var spriteSize = characterSprite.texture.get_size()
 	var spriteShape = RectangleShape2D.new()
