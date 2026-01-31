@@ -20,7 +20,7 @@ func _ready() -> void:
 	if $Parallax2D.characterCount == 0:
 		UI.disableNode($GameUi/options/optionList/communicate)
 	UI.revealNode(UI.options)
-<<<<<<< Updated upstream
+
 
 func crossFade(texture: Texture2D):
 	if _is_fading:
@@ -42,7 +42,3 @@ func crossFade(texture: Texture2D):
 	from.visible = false
 	_using_a = !_using_a
 	_is_fading = false
-=======
-	
-	
->>>>>>> Stashed changes
