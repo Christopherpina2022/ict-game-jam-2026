@@ -11,8 +11,6 @@ script = ExtResource("1_e02cn")
 [node name="GameUi" parent="." unique_id=1653777319 instance=ExtResource("1_oksfc")]
 top_level = true
 
-[node name="TODO-characterpositioning" type="Node" parent="." unique_id=1993828442]
-
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1725487271]
 script = ExtResource("2_pcytu")
 characterScene = ExtResource("4_pcytu")

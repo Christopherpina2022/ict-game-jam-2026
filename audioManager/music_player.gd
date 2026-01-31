@@ -8,6 +8,8 @@ var nextPlayer: AudioStreamPlayer
 @onready var musicA: AudioStreamPlayer = $MusicA
 @onready var musicB: AudioStreamPlayer = $MusicB
 
+var musicTween: Tween
+
 var musicLibrary = {
 	"menu": preload("res://Assets/tempAudio/check it out i'm in the house like carpet [aByWFApNKEw].mp3"),
 	"room": preload("res://Assets/tempAudio/Drakengard 3： mikhail's song english version [BWLTHAm_vhM].mp3")
@@ -23,10 +25,11 @@ func _ready() -> void:
 
 func playMusic(trackName: String):
 	if not musicLibrary.has(trackName):
-		push_warning("Music track not found: " + trackName)
 		return
 	if currentPlayer.stream == musicLibrary[trackName]:
 		return
+	if musicTween and musicTween.is_running():
+		musicTween.kill()
 	
 	nextPlayer.stream = musicLibrary[trackName]
 	nextPlayer.volume_db = -80

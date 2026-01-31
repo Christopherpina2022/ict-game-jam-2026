@@ -38,7 +38,7 @@ text = "USER - ROLE"
 
 [node name="Label4" type="Label" parent="Control/VBoxContainer" unique_id=1241851451]
 layout_mode = 2
-text = "Bejamin Manette - Artwork"
+text = "Bejamin Manette - Artwork, Dialog Scripting"
 
 [node name="Label5" type="Label" parent="Control/VBoxContainer" unique_id=2078545906]
 layout_mode = 2
