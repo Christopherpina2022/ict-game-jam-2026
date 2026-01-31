@@ -98,6 +98,7 @@ offset_bottom = 1067.0
 theme_override_font_sizes/font_size = 21
 text = "ESC: pause menu | Mouse: select item / continue dialog"
 
+[connection signal="pressed" from="options/optionList/communicate" to="." method="_on_communicate_pressed"]
 [connection signal="pressed" from="pause/VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="pause/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="pause/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
