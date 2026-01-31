@@ -39,6 +39,8 @@ func _on_save_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/menu/Menu.tscn")
 
-# Options
+# Options functionality
 func _on_communicate_pressed() -> void:
+	hideControl()
+	# TODO: set the character communicate to 1 (Need gamestate to access)
 	pass # Replace with function body.
