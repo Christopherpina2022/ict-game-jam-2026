@@ -1,6 +1,6 @@
 extends Node
 
-var NPC_NAMES = ["janice","robert","jim","mia", "jani", "sandi","cheg", "johan", "angelo", "kyle", "phelicia", "craig", "hilda", "skye"] 
+var NPC_NAMES = ["janice","robert","jim","mia", "jani", "sandi","cheg", "johan", "angelo", "kyle", "phelicia", "criag", "hilda", "skye"] 
 
 #template for junction/room
 var Junction = {

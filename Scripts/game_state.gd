@@ -55,18 +55,18 @@ var playerNpcInfo = {
 
 var playerEncounters = {
 	"npcs" : {
-		"janice": playerNpcInfo.duplicate(),
-		"robert": playerNpcInfo.duplicate(),
-		"jim": playerNpcInfo.duplicate(),
-		"mia": playerNpcInfo.duplicate(),
+		 "janice": playerNpcInfo.duplicate(),
+		 "robert": playerNpcInfo.duplicate(),
+		 "jim": playerNpcInfo.duplicate(),
+		 "mia": playerNpcInfo.duplicate(),
 		 "jani": playerNpcInfo.duplicate(),
 		 "sandi": playerNpcInfo.duplicate(),
-		"cheg": playerNpcInfo.duplicate(),
+		 "cheg": playerNpcInfo.duplicate(),
 		 "johan": playerNpcInfo.duplicate(),
 		 "angelo": playerNpcInfo.duplicate(),
 		 "kyle": playerNpcInfo.duplicate(),
 		 "phelic": playerNpcInfo.duplicate(),
-		 "craig": playerNpcInfo.duplicate(),
+		 "criag": playerNpcInfo.duplicate(),
 		 "hilda": playerNpcInfo.duplicate(),
 		 "skye": playerNpcInfo.duplicate()
 	}
