@@ -58,7 +58,7 @@ var characterLibrary = {
 	"kyle": preload("res://Assets/characters/pressureSurgeon.png"), 
 	"phelicia": preload("res://Assets/characters/mia.png"),
 	"criag": preload("res://Assets/characters/surgeon.png"),
-	"hilda": preload("res://Assets/characters/jim1.png"), #
+	"hilda": preload("res://Assets/characters/hilda.png"), #
 	"skye": preload("res://Assets/characters/skye.png")
 }
 
