@@ -39,6 +39,7 @@ func addCharacters() -> void:
 			characters.append(charInstance)
 			## Will be set by state
 			var tex = RoomManager.activeJunction["npcs"][i]
+			#print(RoomManager.activeJunction["npcs"][i])
 			charInstance.assignSprite(tex)
 			charStartPos.append(pos)
 

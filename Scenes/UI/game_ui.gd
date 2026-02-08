@@ -148,25 +148,25 @@ func _on_observe_pressed() -> void:
 # dialog options functionality
 func _on_button_pressed() -> void: #go to npc 1
 	hideControl()
-	enterDialogueWith(npcs[0])
+	enterDialogueWith(RoomManager.activeJunction["npcs"][0])
 	dialog.visible = true
 
 
 func _on_button_2_pressed() -> void: #go to npc 2
 	hideControl()
-	enterDialogueWith(npcs[1])
+	enterDialogueWith(RoomManager.activeJunction["npcs"][1])
 	dialog.visible = true
 
 
 func _on_button_3_pressed() -> void: #go to npc 3
 	hideControl()
-	enterDialogueWith(npcs[2])
+	enterDialogueWith(RoomManager.activeJunction["npcs"][2])
 	dialog.visible = true
 
 
 func _on_button_4_pressed() -> void: #go to npc 4
 	hideControl()
-	enterDialogueWith(npcs[3])
+	enterDialogueWith(RoomManager.activeJunction["npcs"][3])
 	dialog.visible = true
 	
 	
@@ -226,9 +226,9 @@ func _on_D_OptionSecret_Pressed():
 	
 func avialableCharactersinRoom():
 	var room = RoomManager.activeJunction 
-	var npcs = RoomManager.activeJunction["npcs"]
+	npcs = RoomManager.activeJunction["npcs"]
 	if(room):
-		npcs = RoomManager.activeJunction["npcs"]
+
 		for i in range(4):
 			if(i < npcs.size()):
 				match i:
@@ -257,8 +257,10 @@ func avialableCharactersinRoom():
 				
 func enterDialogueWith(npc):
 	activeNPC = npc
+	print(npcProfiles,npc)
 	for i in range(npcProfiles.size()):
 		if(npc == npcProfiles[i].Name):
+			#print(npc)
 			activeNPCIdx = i
 			CharacterName.text = npc
 			if(!playerState["npcs"][npc]["hasEncountered"]):

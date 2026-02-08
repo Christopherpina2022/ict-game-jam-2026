@@ -65,7 +65,7 @@ var playerEncounters = {
 		 "johan": playerNpcInfo.duplicate(),
 		 "angelo": playerNpcInfo.duplicate(),
 		 "kyle": playerNpcInfo.duplicate(),
-		 "phelic": playerNpcInfo.duplicate(),
+		 "phelicia": playerNpcInfo.duplicate(),
 		 "criag": playerNpcInfo.duplicate(),
 		 "hilda": playerNpcInfo.duplicate(),
 		 "skye": playerNpcInfo.duplicate()
