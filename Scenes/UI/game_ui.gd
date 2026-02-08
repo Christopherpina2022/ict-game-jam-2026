@@ -37,7 +37,7 @@ var npcProfiles = []
 var activeNPC = ""
 var activeNPCIdx = 0
 var npcOutcomes = [0,0,0,0]
-var outComeTypes = [""]
+var outComeTypes = ["","","",""]
 var pathID = 0
 var dispRate = 0
 
@@ -180,12 +180,14 @@ func continueDialogue(out):
 	
 func _on_D_Option1_Pressed():
 	var out = npcOutcomes[0]
-	#var outType = 
+	
+	
 	#this functionality would add ability to access secret options if the character likes the player
-	#if(out == npcProfiles[activeNPCIdx].Prefered_diologe_type):
-		#playerState["npcs"][activeNPC]["disposition"] = playerState["npcs"][activeNPC]["disposition"] + dispRate
-		#print(playerState["npcs"][activeNPC]["disposition"])
-		#print(dispRate)
+	var outType = outComeTypes[0]
+	if(outType == npcProfiles[activeNPCIdx].Prefered_diologe_type):
+		playerState["npcs"][activeNPC]["disposition"] = playerState["npcs"][activeNPC]["disposition"] + dispRate
+		print(playerState["npcs"][activeNPC]["disposition"])
+		print(dispRate)
 	if(out == 100):
 		playerState["npcs"][activeNPC]["dialoguePathIDs"].append(pathID)
 		hideControl()
@@ -195,7 +197,11 @@ func _on_D_Option1_Pressed():
 		pass
 
 func _on_D_Option2_Pressed():
+	
 	var out = npcOutcomes[1]
+	var outType = outComeTypes[1]
+	if(outType == npcProfiles[activeNPCIdx].Prefered_diologe_type):
+		playerState["npcs"][activeNPC]["disposition"] = playerState["npcs"][activeNPC]["disposition"] + dispRate
 	if(out == 100):
 		playerState["npcs"][activeNPC]["dialoguePathIDs"].append(pathID)
 		hideControl()
@@ -206,6 +212,9 @@ func _on_D_Option2_Pressed():
 	
 func _on_D_Option3_Pressed():
 	var out = npcOutcomes[2]
+	var outType = outComeTypes[2]
+	if(outType == npcProfiles[activeNPCIdx].Prefered_diologe_type):
+		playerState["npcs"][activeNPC]["disposition"] = playerState["npcs"][activeNPC]["disposition"] + dispRate
 	if(out == 100):
 		playerState["npcs"][activeNPC]["dialoguePathIDs"].append(pathID)
 		hideControl()
@@ -216,6 +225,9 @@ func _on_D_Option3_Pressed():
 	
 func _on_D_OptionSecret_Pressed():
 	var out = npcOutcomes[3]
+	var outType = outComeTypes[3]
+	if(outType == npcProfiles[activeNPCIdx].Prefered_diologe_type):
+		playerState["npcs"][activeNPC]["disposition"] = playerState["npcs"][activeNPC]["disposition"] + dispRate
 	if(out == 100):
 		playerState["npcs"][activeNPC]["dialoguePathIDs"].append(pathID)
 		hideControl()
@@ -257,10 +269,9 @@ func avialableCharactersinRoom():
 				
 func enterDialogueWith(npc):
 	activeNPC = npc
-	print(npcProfiles,npc)
+
 	for i in range(npcProfiles.size()):
 		if(npc == npcProfiles[i].Name):
-			#print(npc)
 			activeNPCIdx = i
 			CharacterName.text = npc
 			if(!playerState["npcs"][npc]["hasEncountered"]):
